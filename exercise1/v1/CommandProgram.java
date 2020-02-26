@@ -1,4 +1,4 @@
-package ro.fasttrackit.curs13.homework.exercise1;
+package ro.fasttrackit.curs13.homework.exercise1.v1;
 
 import java.util.Scanner;
 
@@ -7,40 +7,24 @@ public class CommandProgram {
     public void getCommands(DailyPlanner planner) {
         Scanner scanner = new Scanner(System.in);
         boolean finished = false;
-        printOptions();
         int option;
         while (!finished) {
+            printOptions();
             System.out.print("Option: ");
             option = scanner.nextInt();
             switch (option) {
                 case 1:
-                    System.out.print("Day: ");
-                    String dayString = scanner.next().toUpperCase();
-                    DaysOfTheWeek dayOfTheWeek = DaysOfTheWeek.valueOf(dayString);
-                    System.out.print("Activity: ");
-                    String activity = scanner.next();
-                    planner.addActivity(dayOfTheWeek, activity);
+                    planner.addActivity(getDay(), getActivity());
                     System.out.println();
-                    printOptions();
                     break;
 
                 case 2:
-                    System.out.print("Day: ");
-                    dayString = scanner.next().toUpperCase();
-                    dayOfTheWeek = DaysOfTheWeek.valueOf(dayString);
-                    System.out.print("Activity: ");
-                    activity = scanner.next();
-                    planner.removeActivity(dayOfTheWeek, activity);
+                    planner.removeActivity(getDay(), getActivity());
                     System.out.println();
-                    printOptions();
                     break;
 
                 case 3:
-                    System.out.print("Day: ");
-                    dayString = scanner.next().toUpperCase();
-                    dayOfTheWeek = DaysOfTheWeek.valueOf(dayString);
-                    System.out.println(planner.getActivities(dayOfTheWeek) + "\n");
-                    printOptions();
+                    System.out.println(planner.getActivities(getDay()) + "\n");
                     break;
 
                 case 4:
@@ -51,10 +35,22 @@ public class CommandProgram {
 
                 default:
                     System.out.println("Invalid option selected. Please select a different option\n");
-                    printOptions();
                     break;
             }
         }
+    }
+
+    private DaysOfTheWeek getDay() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Day: ");
+        String dayString = scanner.next().toUpperCase();
+        return DaysOfTheWeek.valueOf(dayString);
+    }
+
+    private String getActivity() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Activity: ");
+        return scanner.next();
     }
 
     private void printOptions() {

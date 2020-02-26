@@ -1,4 +1,4 @@
-package ro.fasttrackit.curs13.homework.exercise1;
+package ro.fasttrackit.curs13.homework.exercise1.exceptions;
 
 public class NoActivityException extends RuntimeException {
     private final String activity;

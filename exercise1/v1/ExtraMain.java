@@ -1,4 +1,4 @@
-package ro.fasttrackit.curs13.homework.exercise1;
+package ro.fasttrackit.curs13.homework.exercise1.v1;
 
 public class ExtraMain {
     public static void main(String[] args) {

@@ -1,6 +1,9 @@
-package ro.fasttrackit.curs13.homework.exercise1;
+package ro.fasttrackit.curs13.homework.exercise1.v1;
 
-import static ro.fasttrackit.curs13.homework.exercise1.DaysOfTheWeek.*;
+import ro.fasttrackit.curs13.homework.exercise1.exceptions.NoActivitiesForDayException;
+import ro.fasttrackit.curs13.homework.exercise1.exceptions.NoActivityException;
+
+import static ro.fasttrackit.curs13.homework.exercise1.v1.DaysOfTheWeek.*;
 
 public class Main {
     public static void main(String[] args) {

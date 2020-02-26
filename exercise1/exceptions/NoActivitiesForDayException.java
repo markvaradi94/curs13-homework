@@ -1,4 +1,6 @@
-package ro.fasttrackit.curs13.homework.exercise1;
+package ro.fasttrackit.curs13.homework.exercise1.exceptions;
+
+import ro.fasttrackit.curs13.homework.exercise1.v1.DaysOfTheWeek;
 
 public class NoActivitiesForDayException extends Exception {
     private final DaysOfTheWeek dayOfTheWeek;
